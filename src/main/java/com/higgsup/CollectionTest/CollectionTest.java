@@ -11,17 +11,35 @@ import java.util.stream.Collectors;
 public class CollectionTest {
     public static void main(String[] args) {
         StudentRepo studentRepo = new StudentRepo();
-        List<Student> students = studentRepo.getListStudent(10);
+        List<Student> students = studentRepo.getListStudent(3);
 
-        withMap();
+        // withMap();
 
-        //  withList(students);
+        withList(students);
         // System.out.println("d");
     }
 
     private static void withList(List<Student> students) {
         List<Student> students1 = students.stream().sorted((o1, o2) -> o2.getId().compareTo(o1.getId())).collect(Collectors.toList());
+        System.out.println("show all");
         students1.forEach(student -> System.out.println(student.getId()));
+
+        System.out.println("chỉnh sửa all");
+
+
+        students1.replaceAll(student -> {
+            student.setId(1111);
+            return student;
+        });
+        students1.forEach(student -> System.out.println(student.getId()));
+
+
+        System.out.println("xóa all");
+        students1.removeIf(student -> true);
+
+        System.out.println(students1);
+
+
     }
 
     private static void withMap() {
