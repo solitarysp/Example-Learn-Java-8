@@ -3,9 +3,7 @@ package com.higgsup.CollectionTest;
 import com.higgsup.CollectionTest.entity.Student;
 import com.higgsup.CollectionTest.repo.StudentRepo;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class CollectionTest {
@@ -15,8 +13,14 @@ public class CollectionTest {
 
         // withMap();
 
-        withList(students);
+        // withList(students);
         // System.out.println("d");
+
+        List<String> strings = new ArrayList<>();
+        strings.add("test");
+        System.out.println(strings.stream().map(s -> s.split("")).flatMap(Arrays::stream).collect(Collectors.toList()));
+        ;
+
     }
 
     private static void withList(List<Student> students) {
