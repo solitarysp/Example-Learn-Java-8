@@ -1,4 +1,4 @@
-package com.higgsup.stream.cac_cach_strwam_lay_source;
+package com.higgsup.stream.cac_cach_Stream_lay_source;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.stream.Stream;
 
 public class Main {
-    static String pathUrl = "D:\\LeThanh\\project\\project_KPI\\repo\\demoOrTest\\java8\\src\\main\\resources\\data.txt";
+    static String pathUrl = "D:\\project\\Example-Learn-Java-8\\src\\main\\resources\\data.txt";
 
     public static void main(String[] args) throws IOException {
         fromClassConCuaCollection();
